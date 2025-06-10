@@ -1,0 +1,33 @@
+<div class="space-y-6">
+  <!-- Search Bar -->
+  <div class="bg-white shadow rounded-lg p-6">
+    <%= form_with url: password_entries_path, method: :get, 
+        data: { turbo_frame: "password_entries_list", turbo_action: "advance" }, 
+        class: "flex space-x-4" do |form| %>
+      <%= form.text_field :search, placeholder: "Search passwords...", 
+          value: params[:search], 
+          class: "flex-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+      <%= form.submit "Search", class: "bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700" %>
+    <% end %>
+  </div>
+
+  <!-- Add New Password Form -->
+  <div class="bg-white shadow rounded-lg p-6">
+    <h2 class="text-lg font-medium text-gray-900 mb-4">Add New Password</h2>
+    <div id="password_entry_form">
+      <%= render "form", password_entry: @password_entry %>
+    </div>
+  </div>
+
+  <!-- Password Entries List -->
+  <%= turbo_frame_tag "password_entries_list" do %>
+    <div class="bg-white shadow rounded-lg">
+      <div class="px-6 py-4 border-b border-gray-200">
+        <h2 class="text-lg font-medium text-gray-900">Your Passwords</h2>
+      </div>
+      <div id="password_entries" class="divide-y divide-gray-200">
+        <%= render @password_entries %>
+      </div>
+    </div>
+  <% end %>
+</div>

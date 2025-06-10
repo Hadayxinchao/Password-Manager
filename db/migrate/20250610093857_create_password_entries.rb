@@ -13,6 +13,6 @@ class CreatePasswordEntries < ActiveRecord::Migration[8.0]
     end
 
     add_index :password_entries, [ :user_id, :title ]
-    add_index :password_entries, website_url: true
+    add_index :password_entries, :website_url
   end
 end
