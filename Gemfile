@@ -44,7 +44,7 @@ gem "thruster", require: false
 
 # Authentication and security
 gem "bcrypt", "~> 3.1"
-gem "jwt", "~> 2.10"
+gem "jwt", "~> 3.0"
 gem "rack-cors", "~> 3.0"
 
 # Encryption and serialization
