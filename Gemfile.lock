@@ -141,7 +141,7 @@ GEM
     json (2.12.2)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
-    jwt (2.10.1)
+    jwt (3.0.0)
       base64
     kamal (2.6.1)
       activesupport (>= 7.0)
@@ -402,7 +402,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jsonapi-serializer (~> 2.2)
-  jwt (~> 2.10)
+  jwt (~> 3.0)
   kamal
   pg (~> 1.1)
   propshaft
